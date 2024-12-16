@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "d20a20a9-7af9-4aa6-ae46-318d94575dd7",
+		"name": "AsyncTaskManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23531582"
+	},
+	"item": [
+		{
+			"name": "Регистрация пользователя",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"User1\",\n    \"password\": \"Password1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/register/"
+			},
+			"response": []
+		},
+		{
+			"name": "Получение токена",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"User1\",\n    \"password\": \"Password1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/token/"
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка задач",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MzUzMzU3LCJpYXQiOjE3MzQzNTE1NTcsImp0aSI6ImUyNWMxMzQ1M2FiZjQxMjhiMzdjYjIxY2FjYTVmZjgyIiwidXNlcl9pZCI6MX0.sqZNBsGHxW-P6SBZ1tL6hCMJHdFE5bF4oqGU0RarIUU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/tasks/"
+			},
+			"response": []
+		},
+		{
+			"name": "Создание задачи",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MzUzMzU3LCJpYXQiOjE3MzQzNTE1NTcsImp0aSI6ImUyNWMxMzQ1M2FiZjQxMjhiMzdjYjIxY2FjYTVmZjgyIiwidXNlcl9pZCI6MX0.sqZNBsGHxW-P6SBZ1tL6hCMJHdFE5bF4oqGU0RarIUU"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"task_type\": \"sum\",\n    \"input_data\": {\n        \"numbers\": [1, 2]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/tasks/create/"
+			},
+			"response": []
+		},
+		{
+			"name": "Статус задачи",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MzUzMzU3LCJpYXQiOjE3MzQzNTE1NTcsImp0aSI6ImUyNWMxMzQ1M2FiZjQxMjhiMzdjYjIxY2FjYTVmZjgyIiwidXNlcl9pZCI6MX0.sqZNBsGHxW-P6SBZ1tL6hCMJHdFE5bF4oqGU0RarIUU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/tasks/1"
+			},
+			"response": []
+		}
+	]
+}
