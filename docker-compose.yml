@@ -41,6 +41,12 @@ services:
     ports:
       - "5432:5432"
 
+  redis:
+    image: redis:7.4.0-alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+
   celery:
     build: .
     container_name: celery
@@ -53,9 +59,3 @@ services:
       - DJANGO_SETTINGS_MODULE=config.settings
       - CELERY_BROKER_URL=redis://redis:6379/0
       - CELERY_RESULT_BACKEND=django-db
-
-  redis:
-    image: redis:7.4.0-alpine
-    container_name: redis
-    ports:
-      - "6379:6379"
