@@ -25,7 +25,7 @@ class TaskListView(generics.ListAPIView):
     filterset_class = TaskFilter
 
     def get_queryset(self):
-        return Task.objects.filter(user=self.request.user)
+        return Task.objects.filter(user=self.request.user).order_by("id")
 
 
 class TaskCreateView(generics.CreateAPIView):
