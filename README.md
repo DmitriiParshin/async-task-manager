@@ -55,14 +55,6 @@ cd async-task-manager
 docker compose up -d --build
 ```
 
-### 3. Запуск проекта
-
-Запустите проект:
-
-```
-docker compose up -d --build
-```
-
 ## Проверка запросов в Postman
 
 ### Файл `PostmanCollection.json` - это коллекция для импорта в Postman
