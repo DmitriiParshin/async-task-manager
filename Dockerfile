@@ -15,12 +15,3 @@ COPY pyproject.toml poetry.lock ./
 RUN poetry config virtualenvs.create false && poetry install --with dev --no-interaction --no-ansi
 
 COPY . .
-
-COPY entrypoint.sh /entrypoint.sh
-
-RUN chmod +x /entrypoint.sh
-
-EXPOSE 8000
-
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["poetry", "run", "python", "manage.py", "runserver", "0.0.0.0:8000"]
