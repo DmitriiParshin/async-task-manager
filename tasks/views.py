@@ -39,9 +39,9 @@ class TaskCreateView(generics.CreateAPIView):
 
         task = serializer.save(user=user)
         if task.task_type == "sum":
-            perform_sum.apply_async((task.id,))
+            perform_sum.delay(task.id)
         elif task.task_type == "countdown":
-            perform_countdown.apply_async((task.id,))
+            perform_countdown.delay(task.id)
 
 
 class TaskDetailView(generics.RetrieveAPIView):
